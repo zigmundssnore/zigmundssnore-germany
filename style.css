@@ -427,6 +427,19 @@ section {
   text-align: center; /* centrē visu saturu šajā sekcijā */
 }
 
+.bio-video {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.bio-video iframe {
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
 
 /* Media Queries for Mobile Optimization */
 @media (max-width: 768px) {
@@ -507,5 +520,6 @@ section {
     max-width: 60%;
   }
 }
+
 
 

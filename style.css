@@ -440,6 +440,28 @@ section {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
+.playlist-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.playlist-container iframe {
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9; /* saglabā proporcijas */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+/* Mobilajam */
+@media (max-width: 768px) {
+    .playlist-container iframe {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+}
 
 /* Mobilajam */
 @media (max-width: 768px) {
@@ -548,6 +570,7 @@ section {
     max-width: 60%;
   }
 }
+
 
 
 

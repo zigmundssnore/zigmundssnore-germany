@@ -181,61 +181,65 @@ section {
 }
 
 /* =========================
-   BUTTONS (Liquid Glass)
+   BUTTONS (Liquid Glass, Bright Version)
 ========================= */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin-top: 20px;
 }
 
 .button {
     position: relative;
-    padding: 12px 20px;
-    border-radius: 18px;
+    padding: 12px 22px;
+    border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
     color: #fff;
 
-    backdrop-filter: blur(12px) saturate(160%);
-    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
 
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.3);
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.35),
-        0 6px 16px rgba(0,0,0,0.35);
+        inset 0 1px 0 rgba(255,255,255,0.4),
+        0 6px 18px rgba(0,0,0,0.4);
 
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        filter 0.2s ease;
 }
 
+/* Spilgtāks hover glow */
 .button:hover {
     transform: translateY(-2px);
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.45),
-        0 10px 24px rgba(0,0,0,0.45);
+        inset 0 1px 0 rgba(255,255,255,0.5),
+        0 12px 28px rgba(0,0,0,0.5);
+    filter: brightness(1.2);
 }
 
 .button:active {
     transform: translateY(0);
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.5);
+    box-shadow: inset 0 3px 10px rgba(0,0,0,0.6);
 }
 
-.button.whatsapp2 { background: rgba(187,187,187,0.6); }
-.button.whatsapp { background: rgba(37,211,102,0.6); }
-.button.facebook { background: rgba(24,119,242,0.6); }
-.button.facebook2 { background: rgba(24,119,242,0.6); }
-.button.sms { background: rgba(219,131,59,0.6); }
-.button.youtube { background: rgba(255,0,0,0.6); }
+/* PIEKLĀTAS SPILGTĀS KRĀSAS */
+.button.whatsapp2 { background: rgba(200,200,200,0.7); }
+.button.whatsapp { background: rgba(37,211,102,0.85); }  /* spilgtāks zaļais */
+.button.facebook { background: rgba(24,119,242,0.85); }   /* spilgtāks zils */
+.button.facebook2 { background: rgba(24,119,242,0.85); }
+.button.sms { background: rgba(219,131,59,0.85); }         /* oranžs/karsts */
+.button.youtube { background: rgba(255,0,0,0.85); }        /* spilgts sarkans */
 .button.instagram {
     background: linear-gradient(
         to right,
-        rgba(225,48,108,0.6),
-        rgba(81,91,212,0.6)
+        rgba(225,48,108,0.85),
+        rgba(81,91,212,0.85)
     );
 }
 
@@ -503,3 +507,4 @@ section {
     max-width: 60%;
   }
 }
+

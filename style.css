@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg');
+    background-image: url('background.jpg'); /* Replace with your image file */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -181,7 +181,7 @@ section {
 }
 
 /* =========================
-   BUTTONS (ONLY THIS CHANGED)
+   BUTTONS (Liquid Glass)
 ========================= */
 .buttons {
     display: flex;
@@ -239,11 +239,10 @@ section {
     );
 }
 
-/* Button link (unchanged) */
 .button-link {
     display: block;
     width: fit-content;
-    background-color: #1abc9c;
+    background-color: #1abc9c; /* zaļganāks, lai izceļas */
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
@@ -259,16 +258,248 @@ section {
     transform: scale(1.05);
 }
 
-/* ====== THE REST IS 100% ORIGINAL ====== */
-
 @keyframes redPulse {
-    0% { background-color: #2980b9; box-shadow: 0 0 0 rgba(41,128,185,0.6); }
-    50% { background-color: #3498db; box-shadow: 0 0 25px rgba(52,152,219,1); }
-    100% { background-color: #2980b9; box-shadow: 0 0 0 rgba(41,128,185,0.6); }
+    0% {
+        background-color: #2980b9;
+        box-shadow: 0 0 0 rgba(41, 128, 185, 0.6);
+    }
+    50% {
+        background-color: #3498db;
+        box-shadow: 0 0 25px rgba(52, 152, 219, 1);
+    }
+    100% {
+        background-color: #2980b9;
+        box-shadow: 0 0 0 rgba(41, 128, 185, 0.6);
+    }
 }
 
 @keyframes update {
-    0% { background-color: #2E2E2E; box-shadow: 0 0 0 rgba(46,46,46,0.6); }
-    50% { background-color: #4B4B4B; box-shadow: 0 0 25px rgba(75,75,75,1); }
-    100% { background-color: #2E2E2E; box-shadow: 0 0 0 rgba(46,46,46,0.6); }
+    0% {
+        background-color: #2E2E2E;
+        box-shadow: 0 0 0 rgba(46, 46, 46, 0.6);
+    }
+    50% {
+        background-color: #4B4B4B;
+        box-shadow: 0 0 25px rgba(75, 75, 75, 1);
+    }
+    100% {
+        background-color: #2E2E2E;
+        box-shadow: 0 0 0 rgba(46, 46, 46, 0.6);
+    }
+}
+
+
+.alert-pulse {
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    animation: redPulse 3s infinite;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.alert-pulse2 {
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    animation: update 3s infinite;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 12px rgba(37, 211, 102, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    padding: 10px 15px;
+    border-radius: 30px;
+    z-index: 999;
+    text-decoration: none;
+    animation: whatsappPulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.05);
+    background-color: #20b455;
+}
+
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.whatsapp-text {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#events {
+    background-color: rgba(0, 0, 0, 0.5); /* ← 50% melns caurspīdīgs */
+    padding: 40px 25px;
+    border-radius: 16px;
+    margin: 40px auto;
+    max-width: 1000px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#update {
+    padding: 20px;
+    text-align: center;
+    background-color: #111;
+}
+
+/* desktop defaults */
+#jaunumi .news-img {
+  display: block;
+  margin: 16px auto;
+  max-width: 500px;
+  height: auto;
+}
+
+
+#jaunumi .whatsapp2 {
+  display: inline-block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #25d366; /* WhatsApp zaļais */
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+#jaunumi .whatsapp2:hover {
+  background: #1ebe5d;
+}
+
+#jaunumi .facebook2 {
+  display: inline-block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #1877F2; /* WhatsApp zaļais */
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+#jaunumi .facebook2:hover {
+  background: #145dbf;
+}
+
+#jaunumi .container {
+  text-align: center; /* centrē visu saturu šajā sekcijā */
+}
+
+
+/* Media Queries for Mobile Optimization */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .button {
+        width: 92%;
+    }
+
+    .gallery-container {
+        grid-template-columns: 2fr;
+        gap: 15px;
+    }
+
+    .gallery-container img {
+        max-width: 300px;
+    }
+
+    #before-gallery {
+        flex-direction: column;
+    }
+
+    .image-left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-right {
+        width: 110%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+  #jaunumi img {
+    max-width: 60%;
+    margin: 16px auto;
+    display: block;
+    height: auto;
+  }
+}
+  #jaunumi .whatsapp2 {
+    margin: 20px auto 0;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    display: inline-block;
+  }
+}
+
+
+@media (min-width: 769px) {
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+  #jaunumi .news-img {
+    max-width: 60%;
+  }
 }

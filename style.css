@@ -181,7 +181,7 @@ section {
 }
 
 /* =========================
-   BUTTONS (Liquid Glass, Bright Version)
+   BUTTONS (Ultra Bright Liquid Glass)
 ========================= */
 .buttons {
     display: flex;
@@ -192,20 +192,20 @@ section {
 
 .button {
     position: relative;
-    padding: 12px 22px;
-    border-radius: 20px;
+    padding: 14px 24px;
+    border-radius: 22px;
     text-decoration: none;
     font-weight: bold;
     color: #fff;
 
-    backdrop-filter: blur(14px) saturate(180%);
-    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(220%);
+    -webkit-backdrop-filter: blur(16px) saturate(220%);
 
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.35);
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.4),
-        0 6px 18px rgba(0,0,0,0.4);
+        inset 0 1px 0 rgba(255,255,255,0.5),
+        0 8px 20px rgba(0,0,0,0.5);
 
     transition:
         transform 0.2s ease,
@@ -214,32 +214,32 @@ section {
         filter 0.2s ease;
 }
 
-/* Spilgtāks hover glow */
 .button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        0 12px 28px rgba(0,0,0,0.5);
-    filter: brightness(1.2);
+        inset 0 2px 0 rgba(255,255,255,0.6),
+        0 14px 32px rgba(0,0,0,0.65);
+    filter: brightness(1.4);
+    animation: glowPulse 1.2s infinite;
 }
 
 .button:active {
     transform: translateY(0);
-    box-shadow: inset 0 3px 10px rgba(0,0,0,0.6);
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.65);
 }
 
-/* PIEKLĀTAS SPILGTĀS KRĀSAS */
-.button.whatsapp2 { background: rgba(200,200,200,0.7); }
-.button.whatsapp { background: rgba(37,211,102,0.85); }  /* spilgtāks zaļais */
-.button.facebook { background: rgba(24,119,242,0.85); }   /* spilgtāks zils */
-.button.facebook2 { background: rgba(24,119,242,0.85); }
-.button.sms { background: rgba(219,131,59,0.85); }         /* oranžs/karsts */
-.button.youtube { background: rgba(255,0,0,0.85); }        /* spilgts sarkans */
+/* KRĀSU BOMBA */
+.button.whatsapp2 { background: rgba(200,200,200,0.9); }
+.button.whatsapp { background: rgba(37,211,102,0.95); }  /* ultra zaļais */
+.button.facebook { background: rgba(24,119,242,0.95); }   /* ultra zils */
+.button.facebook2 { background: rgba(24,119,242,0.95); }
+.button.sms { background: rgba(219,131,59,0.95); }         /* oranžs karsts */
+.button.youtube { background: rgba(255,0,0,0.95); }        /* sarkans karsts */
 .button.instagram {
     background: linear-gradient(
         to right,
-        rgba(225,48,108,0.85),
-        rgba(81,91,212,0.85)
+        rgba(225,48,108,0.95),
+        rgba(81,91,212,0.95)
     );
 }
 
@@ -507,4 +507,5 @@ section {
     max-width: 60%;
   }
 }
+
 

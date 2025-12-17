@@ -1,19 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Prevent back button from closing the page and allow navigating between gallery and lightbox
+
+    // =========================
+    // Prevent back button from closing page when lightbox open
+    // =========================
     let lightboxOpen = false;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
 
     history.pushState(null, document.title, location.href); // Initial state
 
     window.onpopstate = function () {
         if (lightboxOpen) {
-            lightbox.style.display = 'none';  // Close the lightbox if open
+            lightbox.style.display = 'none';
             lightboxOpen = false;
         } else {
-            history.pushState(null, document.title, location.href);  // Stay on the current page if the gallery is open
+            history.pushState(null, document.title, location.href);
         }
     };
 
-    // Smooth scroll for navigation links
+    // =========================
+    // Smooth scroll for nav links
+    // =========================
     const links = document.querySelectorAll('header nav ul li a');
     links.forEach(link => {
         link.addEventListener('click', event => {
@@ -24,61 +31,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-const slider = document.getElementById("slider");
-const afterImg = document.getElementById("afterImg");
+    // =========================
+    // Before/After Slider
+    // =========================
+    const slider = document.getElementById("slider");
+    const afterImg = document.getElementById("afterImg");
 
-if (slider && afterImg) {
-    slider.addEventListener("input", () => {
-        afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
-    });
-}
+    if (slider && afterImg) {
+        slider.addEventListener("input", () => {
+            afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
+        });
 
+        // Mobile / touch support
+        let isTouching = false;
 
+        slider.addEventListener("touchstart", () => { isTouching = true; });
+        slider.addEventListener("touchend", () => { isTouching = false; });
+        slider.addEventListener("touchmove", (e) => {
+            if (isTouching) {
+                const rect = slider.getBoundingClientRect();
+                const touch = e.touches[0];
+                let value = ((touch.clientX - rect.left) / rect.width) * 100;
+                value = Math.max(0, Math.min(100, value));
+                slider.value = value;
+                afterImg.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+            }
+        });
+    }
 
-    
-
-    // Gallery lightbox functionality
+    // =========================
+    // Gallery Lightbox
+    // =========================
     const images = document.querySelectorAll('.gallery-container img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
 
     images.forEach(img => {
         img.addEventListener('click', () => {
-            const src = img.getAttribute('data-src');
+            const src = img.getAttribute('data-src') || img.src;
             lightboxImage.src = src;
             lightbox.style.display = 'flex';
             lightboxOpen = true;
-
-            // Push state to history when lightbox is opened
             history.pushState({ lightbox: true }, document.title, location.href);
         });
     });
 
-    // Close the lightbox
-    document.querySelector('.lightbox .close').addEventListener('click', () => {
+    // Close lightbox function
+    const closeLightbox = () => {
         lightbox.style.display = 'none';
         lightboxOpen = false;
-        history.pushState(null, document.title, location.href); // Push state when closing lightbox
-    });
+        history.pushState(null, document.title, location.href);
+    };
 
-    // Close the lightbox when clicking outside the image
+    // Close via X button
+    const closeBtn = document.querySelector('.lightbox .close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeLightbox);
+    }
+
+    // Close via clicking outside image
     lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) {
-            lightbox.style.display = 'none';
-            lightboxOpen = false;
-            history.pushState(null, document.title, location.href); // Push state when closing lightbox
-        }
+        if (event.target === lightbox) closeLightbox();
     });
 
-    // Optionally, close the lightbox when pressing the "Esc" key
+    // Close via Esc key
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            lightbox.style.display = 'none';
-            lightboxOpen = false;
-            history.pushState(null, document.title, location.href); // Push state when closing lightbox
-        }
+        if (event.key === 'Escape') closeLightbox();
     });
+
 });
-
-
-

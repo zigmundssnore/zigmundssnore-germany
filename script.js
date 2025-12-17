@@ -24,6 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const slider = document.getElementById("slider");
+const afterImg = document.getElementById("afterImg");
+
+if (slider && afterImg) {
+    slider.addEventListener("input", () => {
+        afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
+    });
+}
+
+    
+
     // Gallery lightbox functionality
     const images = document.querySelectorAll('.gallery-container img');
     const lightbox = document.getElementById('lightbox');
@@ -66,3 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+

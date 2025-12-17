@@ -180,18 +180,7 @@ section {
     cursor: pointer;
 }
 
-/* Body centrēšana lapā */
-html, body {
-    height: 100%;
-    margin: 0;
-}
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #111;
-}
 
 /* Wrapper centrēšanai */
 .slider-wrapper {
@@ -653,6 +642,7 @@ body {
     max-width: 60%;
   }
 }
+
 
 
 

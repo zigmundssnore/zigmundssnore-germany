@@ -179,9 +179,7 @@ section {
     color: white;
     cursor: pointer;
 }
-
-
-
+/* Slider wrapper centrēšanai lapā */
 .slider-wrapper {
     width: 90%;
     max-width: 700px;
@@ -191,19 +189,20 @@ section {
     align-items: center;
 }
 
-.title {
+/* Title */
+.slider-wrapper .title {
     margin-bottom: 15px;
     font-weight: 600;
     text-align: center;
 }
 
-/* Compare wrapper */
+/* Compare container */
 .compare {
-    position: relative;
     width: 100%;
     max-width: 700px;
-    padding-top: 56.25%;       /* 16:9 aspect ratio */
+    position: relative;
     overflow: hidden;
+    padding-top: 56.25%;       /* 16:9 proporcija, droši mobile */
 }
 
 /* Images */
@@ -218,12 +217,15 @@ section {
     pointer-events: none;
 }
 
+/* Top image (after) */
 .compare .after {
-    clip-path: inset(0 50% 0 0);
+    clip-path: inset(0 50% 0 0); /* sākumā 50% */
 }
 
+/* Slider */
 #slider {
     width: 100%;
+    max-width: 700px;
     margin-top: 12px;
     cursor: pointer;
 }
@@ -626,6 +628,7 @@ section {
     max-width: 60%;
   }
 }
+
 
 
 

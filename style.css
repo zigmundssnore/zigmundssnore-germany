@@ -180,53 +180,59 @@ section {
     cursor: pointer;
 }
 
-
 /* Wrapper centrēšanai */
 .slider-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* horizontāli pietiek, vertikāli vari ignorēt, ja nevajag */
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 /* Title */
 .slider-wrapper .title {
     margin-bottom: 15px;
     font-weight: 600;
+    text-align: center;
 }
 
 /* Compare container */
 .compare {
     position: relative;
-    width: 700px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16/9; /* vai izmēram atbilstošs */
     overflow: hidden;
 }
 
 /* Images */
 .compare img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: block;
+    height: 100%;
+    object-fit: cover; /* lai bilde nepārplīstu un nenospiežas */
     user-select: none;
     pointer-events: none;
 }
 
 /* Top image (after) */
 .compare .after {
-    position: absolute;
-    top: 0;
-    left: 0;
     clip-path: inset(0 50% 0 0);
 }
 
 /* Slider */
 #slider {
-    width: 700px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 700px;
     margin-top: 12px;
     cursor: pointer;
 }
-/* Papildu tweaks mazākiem ekrāniem */
+
+/* Mobile tweaks */
 @media (max-width: 480px) {
     .slider-wrapper {
         padding: 0 5px;
@@ -236,6 +242,7 @@ section {
         margin-top: 8px;
     }
 }
+
 /* =========================
    BUTTONS (Ultra Bright Liquid Glass)
 ========================= */
@@ -626,6 +633,7 @@ section {
     max-width: 60%;
   }
 }
+
 
 
 

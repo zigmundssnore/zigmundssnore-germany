@@ -24,16 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
- // Ņem slider un “after” bildi
 const slider = document.getElementById("slider");
 const afterImg = document.getElementById("afterImg");
 
-// Ja tie eksistē, pieslēdz event
 if (slider && afterImg) {
     slider.addEventListener("input", () => {
         afterImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
     });
 }
+
 
 
     
@@ -80,5 +79,6 @@ if (slider && afterImg) {
         }
     });
 });
+
 
 

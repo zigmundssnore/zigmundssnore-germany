@@ -1,4 +1,6 @@
-/* General Styles */
+/* =========================
+   General Styles
+========================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -179,6 +181,11 @@ section {
     color: white;
     cursor: pointer;
 }
+
+/* =========================
+   Slider / Before & After
+========================= */
+
 /* Wrapper centrēšanai lapā, vertikāli + horizontāli */
 .slider-wrapper {
     min-height: 100vh;            /* aizņem visu ekrāna augstumu */
@@ -237,8 +244,9 @@ section {
         margin-top: 8px;
     }
 }
+
 /* =========================
-   BUTTONS (Ultra Bright Liquid Glass)
+   Buttons / Liquid Glass
 ========================= */
 .buttons {
     display: flex;
@@ -285,13 +293,13 @@ section {
     box-shadow: inset 0 4px 12px rgba(0,0,0,0.65);
 }
 
-/* KRĀSU BOMBA */
+/* Button colors */
 .button.whatsapp2 { background: rgba(200,200,200,0.9); }
-.button.whatsapp { background: rgba(37,211,102,0.95); }  /* ultra zaļais */
-.button.facebook { background: rgba(24,119,242,0.95); }   /* ultra zils */
+.button.whatsapp { background: rgba(37,211,102,0.95); }
+.button.facebook { background: rgba(24,119,242,0.95); }
 .button.facebook2 { background: rgba(24,119,242,0.95); }
-.button.sms { background: rgba(219,131,59,0.95); }         /* oranžs karsts */
-.button.youtube { background: rgba(255,0,0,0.95); }        /* sarkans karsts */
+.button.sms { background: rgba(219,131,59,0.95); }
+.button.youtube { background: rgba(255,0,0,0.95); }
 .button.instagram {
     background: linear-gradient(
         to right,
@@ -300,10 +308,11 @@ section {
     );
 }
 
+/* Button-link */
 .button-link {
     display: block;
     width: fit-content;
-    background-color: #1abc9c; /* zaļganāks, lai izceļas */
+    background-color: #1abc9c;
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
@@ -319,36 +328,20 @@ section {
     transform: scale(1.05);
 }
 
+/* =========================
+   Alerts
+========================= */
 @keyframes redPulse {
-    0% {
-        background-color: #2980b9;
-        box-shadow: 0 0 0 rgba(41, 128, 185, 0.6);
-    }
-    50% {
-        background-color: #3498db;
-        box-shadow: 0 0 25px rgba(52, 152, 219, 1);
-    }
-    100% {
-        background-color: #2980b9;
-        box-shadow: 0 0 0 rgba(41, 128, 185, 0.6);
-    }
+    0% { background-color: #2980b9; box-shadow: 0 0 0 rgba(41,128,185,0.6); }
+    50% { background-color: #3498db; box-shadow: 0 0 25px rgba(52,152,219,1); }
+    100% { background-color: #2980b9; box-shadow: 0 0 0 rgba(41,128,185,0.6); }
 }
 
 @keyframes update {
-    0% {
-        background-color: #2E2E2E;
-        box-shadow: 0 0 0 rgba(46, 46, 46, 0.6);
-    }
-    50% {
-        background-color: #4B4B4B;
-        box-shadow: 0 0 25px rgba(75, 75, 75, 1);
-    }
-    100% {
-        background-color: #2E2E2E;
-        box-shadow: 0 0 0 rgba(46, 46, 46, 0.6);
-    }
+    0% { background-color: #2E2E2E; box-shadow: 0 0 0 rgba(46,46,46,0.6); }
+    50% { background-color: #4B4B4B; box-shadow: 0 0 25px rgba(75,75,75,1); }
+    100% { background-color: #2E2E2E; box-shadow: 0 0 0 rgba(46,46,46,0.6); }
 }
-
 
 .alert-pulse {
     color: white;
@@ -374,17 +367,13 @@ section {
     margin-bottom: 20px;
 }
 
-
+/* =========================
+   WhatsApp Float
+========================= */
 @keyframes whatsappPulse {
-    0% {
-        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
-    }
-    50% {
-        box-shadow: 0 0 12px rgba(37, 211, 102, 0.9);
-    }
-    100% {
-        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
-    }
+    0% { box-shadow: 0 0 0px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 0 12px rgba(37,211,102,0.9); }
+    100% { box-shadow: 0 0 0px rgba(37,211,102,0.4); }
 }
 
 .whatsapp-float {
@@ -421,135 +410,38 @@ section {
     white-space: nowrap;
 }
 
-#events {
-    background-color: rgba(0, 0, 0, 0.5); /* ← 50% melns caurspīdīgs */
-    padding: 40px 25px;
-    border-radius: 16px;
-    margin: 40px auto;
-    max-width: 1000px;
-    color: white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
-
-#update {
-    padding: 20px;
-    text-align: center;
-    background-color: #111;
-}
-
-/* desktop defaults */
-#jaunumi .news-img {
-  display: block;
-  margin: 16px auto;
-  max-width: 500px;
-  height: auto;
-}
-
-
-#jaunumi .whatsapp2 {
-  display: inline-block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: #25d366; /* WhatsApp zaļais */
-  color: white;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-#jaunumi .whatsapp2:hover {
-  background: #1ebe5d;
-}
-
-#jaunumi .facebook2 {
-  display: inline-block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: #1877F2; /* WhatsApp zaļais */
-  color: white;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-#jaunumi .facebook2:hover {
-  background: #145dbf;
-}
-
-#jaunumi .container {
-  text-align: center; /* centrē visu saturu šajā sekcijā */
-}
-
-.bio-video {
+/* =========================
+   Video / Playlist
+========================= */
+.bio-video, .playlist-container {
     display: flex;
     justify-content: center;
     margin: 40px 0;
 }
 
-.bio-video iframe {
+.bio-video iframe, .playlist-container iframe {
     width: 90%;
     max-width: 900px;
-    aspect-ratio: 16 / 9; /* saglabā proporcijas */
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-}
-.playlist-container {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-}
-
-.playlist-container iframe {
-    width: 90%;
-    max-width: 900px;
-    aspect-ratio: 16 / 9; /* saglabā proporcijas */
+    aspect-ratio: 16 / 9;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
-/* Mobilajam */
+/* =========================
+   Media Queries
+========================= */
 @media (max-width: 768px) {
-    .playlist-container iframe {
+    .playlist-container iframe, .bio-video iframe {
         width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-    }
-}
-
-/* Mobilajam */
-@media (max-width: 768px) {
-    .bio-video {
-        margin: 20px 0;
-    }
-
-    .bio-video iframe {
-        width: 100%;       /* pilna platuma uz telefonu */
-        height: auto;      /* saglabā proporcijas */
         max-width: 100%;
         border-radius: 10px;
         box-shadow: 0 4px 16px rgba(0,0,0,0.4);
     }
-}
 
-/* Super maziem telefoniem */
-@media (max-width: 480px) {
     .bio-video {
-        margin: 15px 0;
+        margin: 20px 0;
     }
 
-    .bio-video iframe {
-        border-radius: 8px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.3);
-    }
-}
-
-
-/* Media Queries for Mobile Optimization */
-@media (max-width: 768px) {
     .buttons {
         flex-direction: column;
         gap: 5px;
@@ -565,45 +457,26 @@ section {
         gap: 15px;
     }
 
-    .gallery-container img {
-        max-width: 300px;
-    }
-
     #before-gallery {
         flex-direction: column;
     }
 
-    .image-left {
+    .image-left, .image-right {
         width: 100%;
         margin-bottom: 20px;
     }
 
-    .image-right {
-        width: 110%;
-        margin-bottom: 20px;
+    #jaunumi img, #jaunumi .news-img {
+        max-width: 60%;
+        margin: 16px auto;
+        display: block;
+        height: auto;
     }
-}
 
-@media (max-width: 768px) {
-  #jaunumi img {
-    max-width: 60%;
-    margin: 16px auto;
-    display: block;
-    height: auto;
-  }
-}
-  #jaunumi .whatsapp2 {
-    margin: 20px auto 0;
-    font-size: 0.9rem;
-    padding: 8px 16px;
-    display: inline-block;
-  }
-}
-
-
-@media (min-width: 769px) {
-    .gallery-container {
-        grid-template-columns: repeat(4, 1fr);
+    #jaunumi .whatsapp2 {
+        margin: 20px auto 0;
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }
 
@@ -620,27 +493,19 @@ section {
     section {
         padding: 10px;
     }
+
+    .bio-video iframe, .playlist-container iframe {
+        border-radius: 8px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+    }
+
+    #slider {
+        margin-top: 8px;
+    }
 }
 
-@media (max-width: 768px) {
-  #jaunumi .news-img {
-    max-width: 60%;
-  }
+@media (min-width: 769px) {
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

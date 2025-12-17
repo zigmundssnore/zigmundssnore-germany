@@ -179,18 +179,28 @@ section {
     color: white;
     cursor: pointer;
 }
-/* Slider wrapper centrēšanai lapā */
+/* Body fona, bet nav flex uz body/html */
+body {
+    margin: 0;
+    padding: 0;
+    background: #111; /* vari mainīt */
+}
+
+/* Wrapper centrēšanai ekrānā */
 .slider-wrapper {
     width: 90%;
     max-width: 700px;
-    margin: 0 auto;            /* horizontālais centrs */
+    margin: auto;             /* horizontālais centrs */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;  /* vertikālais centrs */
+    min-height: 100vh;        /* wrapper aizņem visu ekrāna augstumu */
+    box-sizing: border-box;
 }
 
 /* Title */
-.slider-wrapper .title {
+.title {
     margin-bottom: 15px;
     font-weight: 600;
     text-align: center;
@@ -198,11 +208,10 @@ section {
 
 /* Compare container */
 .compare {
-    width: 100%;
-    max-width: 700px;
     position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 proporcija */
     overflow: hidden;
-    padding-top: 56.25%;       /* 16:9 proporcija, droši mobile */
 }
 
 /* Images */
@@ -217,9 +226,9 @@ section {
     pointer-events: none;
 }
 
-/* Top image (after) */
+/* After image */
 .compare .after {
-    clip-path: inset(0 50% 0 0); /* sākumā 50% */
+    clip-path: inset(0 50% 0 0);
 }
 
 /* Slider */
@@ -628,6 +637,7 @@ section {
     max-width: 60%;
   }
 }
+
 
 
 

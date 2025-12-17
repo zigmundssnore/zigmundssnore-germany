@@ -181,10 +181,17 @@ section {
 }
 
 
+/* Wrapper centrēšanai */
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* horizontāli pietiek, vertikāli vari ignorēt, ja nevajag */
+}
+
 /* Title */
-.title {
+.slider-wrapper .title {
     margin-bottom: 15px;
-    font-family: Arial, sans-serif;
     font-weight: 600;
 }
 
@@ -610,6 +617,7 @@ section {
     max-width: 60%;
   }
 }
+
 
 
 

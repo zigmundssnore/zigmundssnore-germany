@@ -180,6 +180,46 @@ section {
     cursor: pointer;
 }
 
+
+/* Title */
+.title {
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+}
+
+/* Compare container */
+.compare {
+    position: relative;
+    width: 700px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Images */
+.compare img {
+    width: 100%;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Top image (after) */
+.compare .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 50% 0 0);
+}
+
+/* Slider */
+#slider {
+    width: 700px;
+    max-width: 100%;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
 /* =========================
    BUTTONS (Ultra Bright Liquid Glass)
 ========================= */
@@ -570,6 +610,7 @@ section {
     max-width: 60%;
   }
 }
+
 
 
 

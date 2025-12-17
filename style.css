@@ -226,7 +226,16 @@ section {
     margin-top: 12px;
     cursor: pointer;
 }
+/* Papildu tweaks mazākiem ekrāniem */
+@media (max-width: 480px) {
+    .slider-wrapper {
+        padding: 0 5px;
+    }
 
+    #slider {
+        margin-top: 8px;
+    }
+}
 /* =========================
    BUTTONS (Ultra Bright Liquid Glass)
 ========================= */
@@ -617,6 +626,7 @@ section {
     max-width: 60%;
   }
 }
+
 
 
 

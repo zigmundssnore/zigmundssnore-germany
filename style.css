@@ -1,18 +1,30 @@
 /* =========================
-   General Styles
+   RESET / BASICS
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   BODY / LAYOUT
 ========================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg'); /* Replace with your image file */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background: url('background.jpg') center / cover no-repeat fixed;
     color: #fff;
     line-height: 1.6;
 }
 
+/* =========================
+   HEADER / NAV
+========================= */
 header {
     background: #333;
     padding: 10px 20px;
@@ -23,14 +35,15 @@ header {
 
 header nav ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 5px 15px;
 }
 
 header nav ul li a {
@@ -43,89 +56,52 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* =========================
+   SECTIONS
+========================= */
 section {
     padding: 20px;
     text-align: center;
 }
 
-/* Image Section Above Gallery */
+/* =========================
+   NEWS IMAGES (filmesana / plakaats)
+========================= */
+.news-img,
+#jaunumi img {
+    width: 100%;
+    max-width: 600px;   /* <<< ŠIS SALABO TAVU PROBLĒMU */
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+/* =========================
+   BEFORE GALLERY
+========================= */
 #before-gallery {
     display: flex;
     justify-content: center;
-    gap: 35px;
     align-items: center;
-    margin: 20px 20px;
-    text-align: center;
+    gap: 35px;
+    margin: 20px;
+    flex-wrap: wrap;
 }
 
-.image-left {
-    width: 100%;
-    max-width: 600px;
-}
-
+.image-left,
 .image-right {
     width: 100%;
     max-width: 600px;
 }
 
-/* Gallery Items */
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
-}
-
-.gallery-item img {
-    width: 80%;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-
-.gallery-item0 img {
-    width: 70%;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-
-.gallery-item img:hover {
-    transform: scale(1);
-}
-
-.image-info {
-    margin: 5px auto;
-    text-align: center;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    width: 80%;
-    font-size: 0.9rem;
-}
-
-.image-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.image-size {
-    font-size: 1rem;
-    margin-top: 5px;
-}
-
-/* Gallery Section */
+/* =========================
+   GALLERY
+========================= */
 #gallery {
+    background: #111;
     padding: 20px;
-    text-align: center;
-    background-color: #111;
 }
 
 #gallery h2 {
-    color: white;
     margin-bottom: 40px;
     font-size: 2rem;
 }
@@ -134,386 +110,139 @@ section {
     display: grid;
     gap: 20px;
     justify-items: center;
-    align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .gallery-container img {
+    max-width: 420px;
     width: 100%;
-    max-width: 421px;
-    border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 6px;
     transition: transform 0.3s;
     cursor: pointer;
 }
 
 .gallery-container img:hover {
-    transform: scale(1.1);
-    border-color: white;
+    transform: scale(1.05);
 }
 
-.news-img {
-    display: block;
-    margin: 50px auto;
-    width: 100%;
-    max-width: 600px;   /* ← ŠIS ir svarīgais */
-    height: auto;
-   
-/* Lightbox styles */
+/* =========================
+   LIGHTBOX
+========================= */
 .lightbox {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    inset: 0;
+    background: rgba(0,0,0,0.9);
     justify-content: center;
     align-items: center;
-    z-index: 1001;
+    z-index: 2000;
 }
 
 .lightbox img {
     max-width: 90%;
     max-height: 90%;
-    border: 2px solid white;
-    border-radius: 5px;
 }
 
 .lightbox .close {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 25px;
     font-size: 3rem;
-    color: white;
     cursor: pointer;
 }
 
 /* =========================
-   Slider / Before & After
+   BEFORE / AFTER SLIDER
 ========================= */
-
-/* Wrapper centrēšanai lapā, vertikāli + horizontāli */
 .slider-wrapper {
-    min-height: 100vh;            /* aizņem visu ekrāna augstumu */
+    min-height: 100vh;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;          /* horizontālais centrs */
-    justify-content: center;      /* vertikālais centrs */
-    width: 90%;
-    max-width: 700px;
-    margin: 0 auto;
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 }
 
-.title {
-    margin-bottom: 15px;
-    font-weight: 600;
-    text-align: center;
-}
-
-/* Compare container */
 .compare {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;  /* 16:9 proporcija */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
-/* Images */
 .compare img {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    user-select: none;
-    pointer-events: none;
 }
 
-/* After image */
 .compare .after {
     clip-path: inset(0 50% 0 0);
 }
 
-/* Slider */
 #slider {
     width: 100%;
-    max-width: 700px;
-    margin-top: 12px;
-    cursor: pointer;
-}
-
-/* Mobile tweaks */
-@media (max-width: 480px) {
-    #slider {
-        margin-top: 8px;
-    }
+    margin-top: 15px;
 }
 
 /* =========================
-   Buttons / Liquid Glass
+   BUTTONS
 ========================= */
 .buttons {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .button {
-    position: relative;
     padding: 14px 24px;
     border-radius: 22px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-
-    backdrop-filter: blur(16px) saturate(220%);
-    -webkit-backdrop-filter: blur(16px) saturate(220%);
-
-    border: 1px solid rgba(255,255,255,0.35);
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        0 8px 20px rgba(0,0,0,0.5);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease,
-        filter 0.2s ease;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    box-shadow:
-        inset 0 2px 0 rgba(255,255,255,0.6),
-        0 14px 32px rgba(0,0,0,0.65);
-    filter: brightness(1.4);
-    animation: glowPulse 1.2s infinite;
-}
-
-.button:active {
-    transform: translateY(0);
-    box-shadow: inset 0 4px 12px rgba(0,0,0,0.65);
-}
-
-/* Button colors */
-.button.whatsapp2 { background: rgba(200,200,200,0.9); }
-.button.whatsapp { background: rgba(37,211,102,0.95); }
-.button.facebook { background: rgba(24,119,242,0.95); }
-.button.facebook2 { background: rgba(24,119,242,0.95); }
-.button.sms { background: rgba(219,131,59,0.95); }
-.button.youtube { background: rgba(255,0,0,0.95); }
-.button.instagram {
-    background: linear-gradient(
-        to right,
-        rgba(225,48,108,0.95),
-        rgba(81,91,212,0.95)
-    );
-}
-
-/* Button-link */
-.button-link {
-    display: block;
-    width: fit-content;
-    background-color: #1abc9c;
     color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 20px auto;
-}
-
-.button-link:hover {
-    background-color: #16a085;
-    transform: scale(1.05);
+    text-decoration: none;
 }
 
 /* =========================
-   Alerts
+   VIDEO / PLAYLIST
 ========================= */
-@keyframes redPulse {
-    0% { background-color: #2980b9; box-shadow: 0 0 0 rgba(41,128,185,0.6); }
-    50% { background-color: #3498db; box-shadow: 0 0 25px rgba(52,152,219,1); }
-    100% { background-color: #2980b9; box-shadow: 0 0 0 rgba(41,128,185,0.6); }
-}
-
-@keyframes update {
-    0% { background-color: #2E2E2E; box-shadow: 0 0 0 rgba(46,46,46,0.6); }
-    50% { background-color: #4B4B4B; box-shadow: 0 0 25px rgba(75,75,75,1); }
-    100% { background-color: #2E2E2E; box-shadow: 0 0 0 rgba(46,46,46,0.6); }
-}
-
-.alert-pulse {
-    color: white;
-    padding: 15px 25px;
-    border-radius: 12px;
-    font-size: 1.3rem;
-    font-weight: 500;
-    animation: redPulse 3s infinite;
-    text-align: center;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.alert-pulse2 {
-    color: white;
-    padding: 15px 25px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    animation: update 3s infinite;
-    text-align: center;
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* =========================
-   WhatsApp Float
-========================= */
-@keyframes whatsappPulse {
-    0% { box-shadow: 0 0 0px rgba(37,211,102,0.4); }
-    50% { box-shadow: 0 0 12px rgba(37,211,102,0.9); }
-    100% { box-shadow: 0 0 0px rgba(37,211,102,0.4); }
-}
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #25D366;
-    padding: 10px 15px;
-    border-radius: 30px;
-    z-index: 999;
-    text-decoration: none;
-    animation: whatsappPulse 2s infinite;
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.05);
-    background-color: #20b455;
-}
-
-.whatsapp-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-}
-
-.whatsapp-text {
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-/* =========================
-   Video / Playlist
-========================= */
-.bio-video, .playlist-container {
+.bio-video,
+.playlist-container {
     display: flex;
     justify-content: center;
     margin: 40px 0;
 }
 
-.bio-video iframe, .playlist-container iframe {
+.bio-video iframe,
+.playlist-container iframe {
     width: 90%;
     max-width: 900px;
     aspect-ratio: 16 / 9;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
 /* =========================
-   Media Queries
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
-    .playlist-container iframe, .bio-video iframe {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    header nav ul {
+        flex-direction: column;
     }
 
-    .bio-video {
-        margin: 20px 0;
+    .news-img,
+    #jaunumi img {
+        max-width: 90%;
     }
 
     .buttons {
         flex-direction: column;
-        gap: 5px;
-        justify-content: center;
-    }
-
-    .button {
-        width: 92%;
     }
 
     .gallery-container {
-        grid-template-columns: 2fr;
-        gap: 15px;
-    }
-
-    #before-gallery {
-        flex-direction: column;
-    }
-
-    .image-left, .image-right {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #jaunumi img, #jaunumi .news-img {
-        max-width: 60%;
-        margin: 16px auto;
-        display: block;
-        height: auto;
-    }
-
-    #jaunumi .whatsapp2 {
-        margin: 20px auto 0;
-        font-size: 0.9rem;
-        padding: 8px 16px;
+        grid-template-columns: 1fr;
     }
 }
-
-@media (max-width: 480px) {
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav ul li {
-        margin: 5px 0;
-    }
-
-    section {
-        padding: 10px;
-    }
-
-    .bio-video iframe, .playlist-container iframe {
-        border-radius: 8px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.3);
-    }
-
-    #slider {
-        margin-top: 8px;
-    }
-}
-
-@media (min-width: 769px) {
-    .gallery-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-

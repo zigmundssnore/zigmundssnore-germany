@@ -152,6 +152,13 @@ section {
     border-color: white;
 }
 
+.news-img {
+    display: block;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 600px;   /* ← ŠIS ir svarīgais */
+    height: auto;
+   
 /* Lightbox styles */
 .lightbox {
     display: none;
@@ -509,3 +516,4 @@ section {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+

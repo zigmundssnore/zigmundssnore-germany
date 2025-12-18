@@ -206,6 +206,23 @@ section {
     font-weight: bold;
     text-decoration: none;
 }
+/* Contact button backgrounds */
+.button.whatsapp2 { background: #BBBBBB; }
+.button.whatsapp  { background: #25D366; }
+.button.facebook  { background: #1877F2; }
+.button.facebook2 { background: #1877F2; }
+.button.sms       { background: #db833b; }
+.button.youtube   { background: #FF0000; }
+.button.instagram {
+    background: linear-gradient(to right, #E1306C, #515BD4);
+}
+
+/* hover, lai izskatās dzīvas */
+.button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
 
 /* =========================
    VIDEO / PLAYLIST
@@ -246,3 +263,4 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
